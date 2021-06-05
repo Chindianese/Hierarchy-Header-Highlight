@@ -30,15 +30,15 @@ public class HierachyHeaderData
 
     [SerializeField]
     [Tooltip("Bold")]
-    public FontStyle FontStyle = FontStyle.Bold;
+    public FontStyle fontStyle = FontStyle.Bold;
 
     [SerializeField]
     [Tooltip("14")]
-    public int FontSize = 14;
+    public int fontSize = 14;
 
     [SerializeField]
     [Tooltip("Middle Center")]
-    public TextAnchor Alignment = TextAnchor.MiddleCenter;
+    public TextAnchor alignment = TextAnchor.MiddleCenter;
 
     public void Reset()
     {
@@ -46,6 +46,9 @@ public class HierachyHeaderData
         textColor = Color.black;
         NameStartsWith = "---";
         HeaderTypeName = "name";
+        fontSize = 14;
+        fontStyle = FontStyle.Bold;
+        alignment = TextAnchor.MiddleCenter;
     }
 }
 

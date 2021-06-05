@@ -44,9 +44,9 @@ public static class HierarchyHeader
                 headerData = data;
                 EditorGUI.DrawRect(selectionRect, headerData.backgroundColor);
                 _style.normal.textColor = headerData.textColor;
-                _style.fontSize = headerData.FontSize;
-                _style.fontStyle = headerData.FontStyle;
-                _style.alignment = headerData.Alignment;
+                _style.fontSize = headerData.fontSize;
+                _style.fontStyle = headerData.fontStyle;
+                _style.alignment = headerData.alignment;
                 if (headerData.NameStartsWith != "")
                 EditorGUI.LabelField(selectionRect, gameObject.name.Replace(headerData.NameStartsWith, "").ToUpperInvariant(), _style);
                 return;
