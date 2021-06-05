@@ -22,23 +22,22 @@ public static class HierarchyHeader
         _style = new GUIStyle();
         UpdateStyle();
         _settings.Changed.AddListener(UpdateStyle);
+        _settings.preset.Changed.AddListener(UpdateStyle);
 
         EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUI;
     }
 
     private static void UpdateStyle()
     {
-      
-        // _style.normal.textColor = _settings.TextColor;
         EditorApplication.RepaintHierarchyWindow();
     }
 
     private static void HierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
     {
         var gameObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
-        for (int i = 0; i < _settings.GetHeadereDataCount(); ++i)
+        for (int i = 0; i < _settings.preset.GetHeadereDataCount(); ++i)
         {
-            HierachyHeaderData data = _settings.GetHeaderData(i);
+            HierachyHeaderData data = _settings.preset.GetHeaderData(i);
             if (gameObject != null && gameObject.name.StartsWith(data.NameStartsWith, StringComparison.Ordinal))
             {
                 headerData = data;
