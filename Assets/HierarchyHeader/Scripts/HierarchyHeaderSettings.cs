@@ -12,7 +12,7 @@ namespace Chindianese.HierarchyHeader
     /// Settings window for heirachy header
     /// http://diegogiacomelli.com.br/unitytips-changing-the-style-of-the-hierarchy-window-group-header/
     /// </summary>
-    [CreateAssetMenu(fileName = "Header/HeaderSettings")]
+    [CreateAssetMenu(menuName = "Hierarchy Header/Header Settings", fileName = "HierarchyHeaderSettings")]
     public class HierarchyHeaderSettings : ScriptableObject
     {
         [HideInInspector]
