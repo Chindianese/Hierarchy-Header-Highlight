@@ -1,17 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
 
 namespace Chindianese.HierarchyHeader
 {
+    /// <author>Tay Hao Cheng</author>
     /// <summary>
-    /// Settings window for heirachy header
-    /// http://diegogiacomelli.com.br/unitytips-changing-the-style-of-the-hierarchy-window-group-header/
+    /// Style preset for header types
     /// </summary>
     [CreateAssetMenu(menuName = "Hierarchy Header/Header Preset")]
     [Serializable]
@@ -28,13 +25,20 @@ namespace Chindianese.HierarchyHeader
         private void OnValidate()
         {
             Changed?.Invoke();
+            UpdateHeaderDateDefault();
+        }
+        /// <summary>
+        /// Reset header data to default if array expands. This is done because Unity Serialsed objects do not have default data,
+        /// and default to 0
+        /// </summary>
+        public void UpdateHeaderDateDefault()
+        {
             if (prevHeaderDataLength < headerData.Count)
             {
                 headerData[headerData.Count - 1].Reset();
             }
             prevHeaderDataLength = headerData.Count;
         }
-
         public HierachyHeaderData GetHeaderData(int index)
         {
             return headerData[index];

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Chindianese.HierarchyHeader
 {
-
+    /// <author>diegogiacomelli - Tay Hao Cheng</author>
     /// <summary>
     /// Hierarchy Window Group Header
     /// http://diegogiacomelli.com.br/unitytips-changing-the-style-of-the-hierarchy-window-group-header/

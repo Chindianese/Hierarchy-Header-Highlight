@@ -5,43 +5,38 @@ using UnityEditor;
 
 namespace Chindianese.HierarchyHeader
 {
+    /// <author>Tay Hao Cheng</author>
+    /// <summary>
+    /// Hold data for each header type
+    /// </summary>
     [System.Serializable]
-    public class HierachyHeaderData
+    public struct HierachyHeaderData
     {
 
         [Tooltip("Title")]
         public string HeaderTypeName;
 
         [Tooltip("---")]
-        public string NameStartsWith /*= "---"*/;
-
-
-
-        // [Tooltip("Bold")]
-        // public string RemoveString /* ="-"*/;
-        // public FontStyle FontStyle /*= FontStyle.Bold*/;
-
-        // [Tooltip("14")]
-        // public int FontSize /*= 14*/;
+        public string NameStartsWith;
 
         [Tooltip("Gray")]
-        public Color backgroundColor = Color.gray;
+        public Color backgroundColor;
 
         [SerializeField]
         [Tooltip("Black")]
-        public Color textColor = Color.black;
+        public Color textColor;
 
         [SerializeField]
         [Tooltip("Bold")]
-        public FontStyle fontStyle = FontStyle.Bold;
+        public FontStyle fontStyle;
 
         [SerializeField]
         [Tooltip("14")]
-        public int fontSize = 14;
+        public int fontSize;
 
         [SerializeField]
         [Tooltip("Middle Center")]
-        public TextAnchor alignment = TextAnchor.MiddleCenter;
+        public TextAnchor alignment;
 
         public void Reset()
         {
