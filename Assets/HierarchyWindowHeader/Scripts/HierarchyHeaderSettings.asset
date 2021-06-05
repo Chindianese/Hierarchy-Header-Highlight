@@ -15,11 +15,11 @@ MonoBehaviour:
   Changed:
     m_PersistentCalls:
       m_Calls: []
-  FontStyle: 1
-  FontSize: 14
-  Alignment: 4
   headerData:
-  - HeaderTypeName: Cat
-    NameStartsWith: 111
-    backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  - HeaderTypeName: name
+    NameStartsWith: ---
+    backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+    FontStyle: 1
+    FontSize: 14
+    Alignment: 4

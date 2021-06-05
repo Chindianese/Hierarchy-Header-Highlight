@@ -28,9 +28,7 @@ public static class HierarchyHeader
 
     private static void UpdateStyle()
     {
-        _style.fontSize = _settings.FontSize;
-        _style.fontStyle = _settings.FontStyle;
-        _style.alignment = _settings.Alignment;
+      
         // _style.normal.textColor = _settings.TextColor;
         EditorApplication.RepaintHierarchyWindow();
     }
@@ -46,6 +44,10 @@ public static class HierarchyHeader
                 headerData = data;
                 EditorGUI.DrawRect(selectionRect, headerData.backgroundColor);
                 _style.normal.textColor = headerData.textColor;
+                _style.fontSize = headerData.FontSize;
+                _style.fontStyle = headerData.FontStyle;
+                _style.alignment = headerData.Alignment;
+                if (headerData.NameStartsWith != "")
                 EditorGUI.LabelField(selectionRect, gameObject.name.Replace(headerData.NameStartsWith, "").ToUpperInvariant(), _style);
                 return;
             }

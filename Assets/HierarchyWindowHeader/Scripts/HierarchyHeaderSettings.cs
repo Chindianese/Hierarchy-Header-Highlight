@@ -16,18 +16,6 @@ public class HierarchyHeaderSettings : ScriptableObject
     [HideInInspector]
     public UnityEvent Changed;
 
-    [SerializeField]
-    [Tooltip("Bold")]
-    public FontStyle FontStyle = FontStyle.Bold;
-
-    [SerializeField]
-    [Tooltip("14")]
-    public int FontSize = 14;
-
-    [SerializeField]
-    [Tooltip("Middle Center")]
-    public TextAnchor Alignment = TextAnchor.MiddleCenter;
-
     [Space(10)]
     [SerializeField]
     private List<HierachyHeaderData> headerData = new List<HierachyHeaderData>();
@@ -35,9 +23,15 @@ public class HierarchyHeaderSettings : ScriptableObject
     private static HierarchyHeaderSettings _instance;
     public static HierarchyHeaderSettings Instance => _instance ?? (_instance = LoadAsset());
 
+    int prevHeaderDataLength = 0;
     private void OnValidate()
     {
         Changed?.Invoke();
+        if(prevHeaderDataLength < headerData.Count)
+        {
+            headerData[headerData.Count - 1].Reset();
+        }
+         prevHeaderDataLength = headerData.Count;
     }
 
     public HierachyHeaderData GetHeaderData(int index)
