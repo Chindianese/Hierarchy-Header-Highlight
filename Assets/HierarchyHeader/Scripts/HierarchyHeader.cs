@@ -28,8 +28,22 @@ namespace Chindianese.HierarchyHeader
             _settings.preset.Changed.AddListener(UpdateStyle);
 
             EditorApplication.hierarchyWindowItemOnGUI += HierarchyWindowItemOnGUI;
+            Debug.Log("Enabled");
+            SceneView.duringSceneGui += OnSceneGUI;
         }
+        static void OnSceneGUI(SceneView sceneView)
+        {
+            if (SceneView.lastActiveSceneView != null)
+            {
+                Handles.BeginGUI();
 
+                // Draw something here using GUI or GUILayout...
+                GUILayout.Label("scene label"); 
+
+                Handles.EndGUI();
+                SceneView.lastActiveSceneView.Repaint();
+            }
+        }
         private static void UpdateStyle()
         {
             EditorApplication.RepaintHierarchyWindow();
@@ -41,7 +55,7 @@ namespace Chindianese.HierarchyHeader
             for (int i = 0; i < _settings.preset.GetHeadereDataCount(); ++i)
             {
                 HierachyHeaderData data = _settings.preset.GetHeaderData(i);
-                if (gameObject != null && gameObject.name.StartsWith(data.NameStartsWith, StringComparison.Ordinal))
+                if (gameObject != null && gameObject.name.StartsWith(data.NameStartsWith, StringComparison.Ordinal)) // find target header type
                 {
                     headerData = data;
                     EditorGUI.DrawRect(selectionRect, headerData.backgroundColor);
