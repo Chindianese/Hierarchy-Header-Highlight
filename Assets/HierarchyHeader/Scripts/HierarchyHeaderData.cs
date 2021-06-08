@@ -38,6 +38,12 @@ namespace Chindianese.HierarchyHeader
         [Tooltip("Middle Center")]
         public TextAnchor alignment;
 
+        [Header("Scene Highlighting")]
+
+        [Tooltip("Line in scene view")]
+        [SerializeField]
+        public bool sceneHighlightEnabled; 
+
         public void Reset()
         {
             backgroundColor = Color.gray;
