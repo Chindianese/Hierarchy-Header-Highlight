@@ -1,8 +1,8 @@
-# Hierarchy Header Highlight
+Hierarchy Header Highlight
 
 Based on [diegogiacomelli](https://diegogiacomelli.com.br/unitytips-changing-the-style-of-the-hierarchy-window-group-header/)
 
-## Heirarchy Hightlight
+## Heirarchy Highlight
 Highlight gameobject in heirarchy by changing name. You can define header types and it color, font style, font size.
 
 ![Alt text](readmeImages/example0.jpg?raw=true "Title")
