@@ -23,13 +23,7 @@ MonoBehaviour:
     fontStyle: 1
     fontSize: 14
     alignment: 4
-  - HeaderTypeName: Highlight
-    NameStartsWith: ---
-    backgroundColor: {r: 0.3254717, g: 1, b: 0.93333155, a: 1}
-    textColor: {r: 0, g: 0, b: 0, a: 1}
-    fontStyle: 2
-    fontSize: 14
-    alignment: 3
+    sceneHighlightEnabled: 0
   - HeaderTypeName: Sub Category
     NameStartsWith: 222
     backgroundColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
@@ -37,3 +31,12 @@ MonoBehaviour:
     fontStyle: 0
     fontSize: 14
     alignment: 4
+    sceneHighlightEnabled: 1
+  - HeaderTypeName: Highlight
+    NameStartsWith: ---
+    backgroundColor: {r: 0.3254717, g: 1, b: 0.93333155, a: 1}
+    textColor: {r: 0, g: 0, b: 0, a: 1}
+    fontStyle: 2
+    fontSize: 14
+    alignment: 3
+    sceneHighlightEnabled: 1

@@ -37,12 +37,14 @@ namespace Chindianese.HierarchyHeader
                 GameObject target = Selection.activeObject as GameObject;
                 if (target == null) return;
                 if (!IsHeaderType(target.name)) return;
+                var data = GetHeaderData(target.name);
+                if (!data.sceneHighlightEnabled) return;
                 if (target.transform.childCount <= 0) return;
+
                 Handles.BeginGUI();
                 // Draw something here using GUI or GUILayout...
                 GUILayout.Label("scene label");
                 Handles.EndGUI();
-                var data = GetHeaderData(target.name);
                 var color = data.backgroundColor;
 
                 float lineLength = 5.0f;
